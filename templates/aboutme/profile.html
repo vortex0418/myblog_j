@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="profile">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-8">
+        <h4>열린 자세 긍정적인 마인드! <em>Web Publisher</em> 정진아입니다.</h4>
+            <div class="card my-4" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{% static 'aboutme/images/jiin.png' %}"
+                       class="img-fluid rounded-start py-5" alt="캐리커쳐">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">profile</h5>
+                    <p class="card-text">
+                        - NAME : 정진아<br>
+                        - HOME : 인천시 부평구 삼산동<br>
+                        - e-mail : vortex0418@naver.com
+                    </p>
+                    <p class="card-text">
+                        <small>깃허브 | https://github.com/vortex0418</small><br>
+                        <small>Blog | https://blog.naver.com/vortex0418</small><br>
+                        <small>Portfolio | http://vortex0418.dothome.co.kr</small><br>
+                        <small>Portfolio | http://vortex0418.dothome.co.kr/me/index.html</small><br>
+                        <small>Portfolio | http://vortex0418.dothome.co.kr/cell/index.html</small><br>
+                        <small>Portfolio | http://vortex0418.dothome.co.kr/gi/index.html</small><br>
+                        <small>Portfolio | http://vortex0418.dothome.co.kr/bc/index.html</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <h4 class="mt-4">Education & Certificate</h4>
+        <hr>
+        <ul>
+            <li>Education : 경인여자대학 졸업 - 인터넷비지니스과</li>
+            <li>Certificate<br>
+                GTQ 1급 - Photoshop<br>
+                정보처리기능사
+            </li>
+        </ul>
+        <h4 class="mt-4">Skills</h4>
+        <hr>
+        <ul>
+            <li>Backend | Python, Java</li>
+            <li>Front | HTML, CSS, JavaScript</li>
+            <li>FrameWork | Dajngo</li>
+            <li>Design | Photoshop, Illustration</li>
+        </ul>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+/*.main-pic img{width:90%; height:250px; border-radius: 5px;}*/
+#pic{height: 300px; border-radius: 5px;}
+.comment{
+    border-top: 1px dotted #ccc;
+    font-size:0.9em;
+    padding-bottom:10px;
+}
+section{margin-left:100px}
+.profile h4{color:#00f;}
+.profile ul li{margin:10px;}
