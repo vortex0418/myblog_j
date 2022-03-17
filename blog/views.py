@@ -5,13 +5,25 @@ from django.utils import timezone
 
 from blog.forms import PostForm, CommentForm
 from blog.models import Post, Comment, Category
+from django.db.models import Q
 
 def postlist(request):
     #블로그 홈
     post_list = Post.objects.order_by('-pub_date')
+    page = request.GET.get('page', 1)
+    kw = request.GET.get('kw', '')
+
+    # 검색 처리
+    if kw:
+        post_list = post_list.filter(
+            Q(title__icontains=kw) |  # 제목 검색(밑줄2개임)
+            Q(content__icontains=kw) |  # 내용
+            Q(author__username__icontains=kw) |  # 질문 글쓴이
+            Q(comment__content__icontains=kw)  # 댓글 내용 검색
+        ).distinct()
 
     # 페이지 처리
-    page = request.GET.get('page', 1)
+
     paginator = Paginator(post_list, 5)
     page_obj = paginator.get_page(page)
     context = {

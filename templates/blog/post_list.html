@@ -35,6 +35,14 @@
             <!-- Search widget-->
             <div class="card mb-4">
                 <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="kw" value="{{ kw|default_if_none:'' }}" style="width:150px;">&nbsp;&nbsp;
+                            <button type="button" id="btn_search"
+                                    class="btn btn-primary" >Go!</button>
+                        </div>
+                    </div>
+                <!--
                 <div class="card-body">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Enter search term..."
@@ -42,6 +50,7 @@
                         <button class="btn btn-primary" id="button-search" type="button">Go!</button>
                     </div>
                 </div>
+                -->
             </div>
             <!-- Categories widget-->
             <div class="card mb-4" id="categories-card">
@@ -97,6 +106,29 @@
             </li>
         {% endif %}
     </ul>
+    <!-- 검색 폼 -->
+    <form method="get" id="searchForm">  <!-- get방식 -->
+        <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
 </div>
 </section>
+{% endblock %}
+{% block script %}
+<script>
+    $(function(){
+        //페이지 처리
+        $('.page-link').click(function(){         //페이지 번호를 클릭하면
+            $('#page').val($(this).data('page'))  //페이지번호를 id가 page인 필드에 설정후
+            $('#searchForm').submit();            //숨겨서 폼을 전송함
+        });
+
+        //검색 처리
+        $('#btn_search').click(function(){ //'찾기'를 클릭하면
+            $('#kw').val($('.kw').val());   //입력된 키워드를 id가 kw인 필드에 설정
+            $('#page').val(1);             //1페이지부터 검색
+            $('#searchForm').submit();     //숨겨서 폼을 전송함
+        });
+    });
+</script>
 {% endblock %}

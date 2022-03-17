@@ -8,10 +8,13 @@
 </head>
 <body>
 {% include 'navbar.html' %}
-<!-- 본문 영역-->
+<!-- 본문 영역 - 기본 파일안에 삽입될 내용 start-->
 {% block content %}
-
+<!--내 용-->
 {% endblock %}
+<!--기본 파일안에 삽입될 내용 end-->
+{% include 'footer.html' %}
+
 <!-- 자바스크립트 영역 -->
 <script src="{% static 'blog/js/jquery-3.6.0.js' %}"></script>
 <script src="{% static 'blog/js/bootstrap.js' %}"></script>

@@ -8,3 +8,17 @@
 section{margin-left:100px}
 .profile h4{color:#00f;}
 .profile ul li{margin:10px;}
+
+/* 박스 크기 설정 */
+.indexpage{height:50px;}
+.loginpage{height:400px;}
+.signuppage{height:230px;}
+.postpage{height:50px;}
+
+/* footer 스타일 */
+footer .menu{list-style:none;}
+footer .menu li{display:inline-block; margin:10px 0 0 40px;}
+footer .menu li:first-child{margin-left:0}
+footer .menu li a{text-decoration:none;}
+footer address p{margin-left:40px; color:#fff; line-height:0.9em;
+        color:rgba(255, 255, 255, 0.6) font-size:0.9em;}
